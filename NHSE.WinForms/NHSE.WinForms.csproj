@@ -12,6 +12,11 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <LangVersion>8</LangVersion>
     <Nullable>enable</Nullable>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Win32Manifest>app.manifest</Win32Manifest>
   </PropertyGroup>
 
   <ItemGroup>
