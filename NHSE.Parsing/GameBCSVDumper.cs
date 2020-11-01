@@ -47,12 +47,30 @@ namespace NHSE.Parsing
                 Console.WriteLine($"Created {fn}");
             }
 
+            void DumpU(string fn, ushort[] ushorts, string dir = "bin")
+            {
+                Directory.CreateDirectory(Path.Combine(dest, dir));
+                byte[] bytes = new byte[ushorts.Length * 2];
+                Buffer.BlockCopy(ushorts, 0, bytes, 0, ushorts.Length * 2);
+                File.WriteAllBytes(Path.Combine(dest, dir, fn), bytes);
+                Console.WriteLine($"Created {fn}");
+            }
+
+            void DumpD<T, S>(string fn, Dictionary<T, S> dict, string dir = "text")
+            {
+                Directory.CreateDirectory(Path.Combine(dest, dir));
+                var lines = dict.Select(z => $"{{{z.Key}, {z.Value:00000}}},");
+                File.WriteAllLines(Path.Combine(dest, dir, fn), lines);
+                Console.WriteLine($"Created {fn}");
+            }
+
             DumpS("bcsv_map.txt", BCSV.EnumLookup.Dump());
             DumpS("lifeSupportAchievement.txt", GetLifeSupportAchievementList(pathBCSV));
             DumpS("recipeDictionary.txt", GetRecipeList(pathBCSV));
             DumpS("outsideAcres.txt", GetAcreNames(pathBCSV));
 
             DumpS("fish.txt", GetFishList(pathBCSV, itemNames));
+            DumpS("dive.txt", GetDiveList(pathBCSV, itemNames));
             DumpS("bugs.txt", GetInsectList(pathBCSV, itemNames));
             DumpS("fossils.txt", GetFossilList(pathBCSV, itemNames));
             DumpS("eventFlagPlayer.txt", GetEventFlagNames(pathBCSV));
@@ -63,6 +81,7 @@ namespace NHSE.Parsing
 
             DumpS("ItemKind.txt", GetPossibleEnum(pathBCSV, "ItemParam.bcsv", 0xFC275E86));
             DumpS("ItemSize.txt", GetPossibleEnum(pathBCSV, "ItemParam.bcsv", 0xE06FB090));
+            DumpS("ItemMenuIcon.txt", GetPossibleEnum(pathBCSV, "ItemParam.bcsv", 0x348D7B06));
             DumpS("PlantKind.txt", GetPossibleEnum(pathBCSV, "FgMainParam.bcsv", 0x48EF0398));
             DumpS("TerrainKind.txt", GetNumberedEnumValues(pathBCSV, "FieldLandMakingUnitModelParam.bcsv", 0x39B5A93D, 0x54706054));
             DumpS("BridgeKind.txt", GetNumberedEnumValues(pathBCSV, "StructureBridgeParam.bcsv", 0x39B5A93D, 0x54706054));
@@ -72,8 +91,11 @@ namespace NHSE.Parsing
             DumpS("DoorKind.txt", GetNumberedEnumValues(pathBCSV, "StructureHouseDoorParam.bcsv", 0x39B5A93D, 0x54706054));
             DumpS("WallKind.txt", GetNumberedEnumValues(pathBCSV, "StructureHouseWallParam.bcsv", 0x39B5A93D, 0x54706054));
 
+            DumpD("ItemStack.txt", GetItemStackDict(pathBCSV));
+
             DumpB("item_kind.bin", GetItemKindArray(pathBCSV));
             DumpB("item_size.bin", GetItemSizeArray(pathBCSV));
+            DumpU("item_menuicon.bin", GetItemMenuIconArray(pathBCSV));
             DumpS("plants.txt", GetPlantedNames(pathBCSV));
             DumpS("item_size_dictionary.txt", GetItemSizeDictionary(pathBCSV));
             DumpS("item_remake.txt", GetItemRemakeDictionary(pathBCSV));
@@ -215,6 +237,95 @@ namespace NHSE.Parsing
             return result;
         }
 
+        public static Dictionary<ItemKind, ushort> GetItemStackDict(string pathBCSV, string fn = "ItemKind.bcsv")
+        {
+            var path = Path.Combine(pathBCSV, fn);
+            var data = File.ReadAllBytes(path);
+            var bcsv = new BCSV(data);
+
+            var dict = bcsv.GetFieldDictionary();
+            var fStack = dict[0x4C9BA961]; // MultiHoldMaxNum
+            var fKind = dict[0x87BF00E8]; // Label
+
+            // clothing is split out more granularly in ItemKind and would cause errors
+            // since it's not likely to ever be stackable, we can skip
+            // none-type can be skipped and doesn't exist in ItemKind either
+            List<string> skipLabels = new List<string>
+            {
+                "TopsDefault",
+                "Tops",
+                "OnePiece",
+                "MarineSuit",
+                "BottomsDefault",
+                "Bottoms",
+                "Shoes",
+                "None"
+            };
+
+            var result = new Dictionary<ItemKind, ushort>();
+            for (int i = 0; i < bcsv.EntryCount; i++)
+            {
+                var stack = bcsv.ReadValue(i, fStack);
+                switch (stack)
+                {
+                    case "-1": // for some reason turnips have a stack value of -1, should be 10...
+                        stack = "10";
+                        break;
+                    case "0": // the game stores items that cannot be stacked as 0, so technically they stack to 1
+                        stack = "1";
+                        break;
+                }
+
+                var stackval = ushort.Parse(stack);
+                var kind = bcsv.ReadValue(i, fKind).TrimEnd('\0');
+                if (skipLabels.Contains(kind))
+                    continue;
+
+                kind = "Kind_" + kind;
+                if (!Enum.TryParse<ItemKind>(kind, out var k))
+                    throw new InvalidEnumArgumentException($"{kind} is not a known enum value @ index {i}. Update the enum index first.");
+                result.Add(k, stackval);
+            }
+
+            return result;
+        }
+
+        public static ushort[] GetItemMenuIconArray(string pathBCSV, string fn = "ItemParam.bcsv")
+        {
+            var path = Path.Combine(pathBCSV, fn);
+            var data = File.ReadAllBytes(path);
+            var bcsv = new BCSV(data);
+
+            var dict = bcsv.GetFieldDictionary();
+            var fType = dict[0x348D7B06];
+            var fID = dict[0x54706054];
+
+            var types = new Dictionary<ushort, ItemMenuIconType>();
+            ushort max = 0;
+            for (int i = 0; i < bcsv.EntryCount; i++)
+            {
+                var id = bcsv.ReadValue(i, fID);
+                var ival = ushort.Parse(id);
+                var type = bcsv.ReadValue(i, fType).TrimEnd('\0');
+
+                if (type.StartsWith("0x"))
+                    type = $"_{type}"; // enum name can't start with number
+
+                if (!Enum.TryParse<ItemMenuIconType>(type, out var k))
+                    throw new InvalidEnumArgumentException($"{type} is not a known enum value @ index {i}. Update the enum index first.");
+                types.Add(ival, k);
+
+                if (ival > max)
+                    max = ival;
+            }
+
+            ushort[] result = new ushort[max + 1];
+            foreach (var kvp in types)
+                result[kvp.Key] = (ushort)kvp.Value;
+
+            return result;
+        }
+
         public static string[] GetItemSizeDictionary(string pathBCSV, string fn = "ItemSize.bcsv")
         {
             var path = Path.Combine(pathBCSV, fn);
@@ -279,27 +390,44 @@ namespace NHSE.Parsing
             var findex = dict[0x54706054];
             var fname = dict[0x45F320F2];
             var fcomment = dict[0x85CF1615];
-            var fv1 = dict[0x3FE43170];
-            var fv2 = dict[0x4171A41D];
+            var fLand = dict[0x3FE43170];
+            var fPlayer = dict[0x4171A41D];
+
+            var fmaxLevel = dict[0x1BE772F0];
+            var fThreshold1 = dict[0xCE0933FC];
+            var fThreshold2 = dict[0x89A9492C];
+            var fThreshold3 = dict[0xB4C9609C];
+            var fThreshold4 = dict[0x06E9BC8C];
+            var fThreshold5 = dict[0x3B89953C];
 
             var result = new List<string>();
             for (int i = 0; i < bcsv.EntryCount; i++)
             {
+                int readHex(BCSVFieldParam p) => int.Parse(bcsv.ReadValue(i, p).Substring(2), NumberStyles.HexNumber);
+
                 var iid = bcsv.ReadValue(i, findex);
-                var ival = ushort.Parse(iid);
+                var index = ushort.Parse(iid);
 
-                var iv1 = bcsv.ReadValue(i, fv1).Substring(2);
-                var iv1a = int.Parse(iv1, NumberStyles.HexNumber);
-
-                var iv2 = bcsv.ReadValue(i, fv2).Substring(2);
-                var iv2a = int.Parse(iv2, NumberStyles.HexNumber);
+                var land = readHex(fLand);
+                var player = readHex(fPlayer);
 
                 var name = bcsv.ReadValue(i, fname).TrimEnd('\0');
+                var paddedName = $"\"{name}\"".PadRight(30, ' ');
+
                 var comment = bcsv.ReadValue(i, fcomment).TrimEnd('\0');
 
-                var paddedName = $"\"{name}\"".PadRight(30, ' ');
-                var v = $"new {nameof(LifeSupportAchievement)}({iv1a,2}, {iv2a,4}, {ival:0000}, {paddedName})";
-                var kvp = $"{{0x{ival:X3}, {v}}}, // {comment}";
+                var tmp = bcsv.ReadValue(i, fmaxLevel);
+                var max = ushort.Parse(tmp);
+                var t1 = readHex(fThreshold1);
+                var t2 = readHex(fThreshold2);
+                var t3 = readHex(fThreshold3);
+                var t4 = readHex(fThreshold4);
+                var t5 = readHex(fThreshold5);
+
+                var values = $"{max}, {t1:0000}, {t2:0000}, {t3:0000}, {t4:0000}, {t5:0000}";
+
+                var v = $"new {nameof(LifeSupportAchievement)}({index:000}, {values}, {land,3}, {player,3}, {paddedName})";
+                var kvp = $"{{0x{index:X2}, {v}}}, // {comment}";
                 result.Add(kvp);
             }
 
@@ -322,6 +450,11 @@ namespace NHSE.Parsing
             return GetItemList(pathBCSV, fn, 0x20CB67BC);
         }
 
+        public static IEnumerable<ushort> GetDiveList(string pathBCSV, string fn = "SeafoodStatusParam.bcsv")
+        {
+            return GetItemList(pathBCSV, fn, 0x20CB67BC);
+        }
+
         public static IEnumerable<string> GetInsectList(string pathBCSV, IReadOnlyList<string> items, string fn = "InsectStatusParam.bcsv")
         {
             var insects = GetInsectList(pathBCSV, fn);
@@ -331,6 +464,12 @@ namespace NHSE.Parsing
         public static IEnumerable<string> GetFishList(string pathBCSV, IReadOnlyList<string> items, string fn = "FishStatusParam.bcsv")
         {
             var insects = GetFishList(pathBCSV, fn);
+            return insects.Select(z => $"{z:00000}, // {items[z]}");
+        }
+
+        public static IEnumerable<string> GetDiveList(string pathBCSV, IReadOnlyList<string> items, string fn = "SeafoodStatusParam.bcsv")
+        {
+            var insects = GetDiveList(pathBCSV, fn);
             return insects.Select(z => $"{z:00000}, // {items[z]}");
         }
 

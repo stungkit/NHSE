@@ -67,7 +67,6 @@ namespace NHSE.WinForms
             var path = Settings.Default.LastFilePath;
             var sav = new HorizonSave(path);
             using var editor = new Editor(sav);
-            using var items = new PlayerItemEditor<Item>(new[] {new Item()}, 1, 1);
             using var so = new SingleObjectEditor<object>(new object(), PropertySort.NoSort, false);
         }
 
@@ -88,6 +87,7 @@ namespace NHSE.WinForms
             "L_PatternName=",
             "L_RemakeBody=",
             "L_RemakeFabric=",
+            "AchievementEditor.L_Threshold",
         };
 
         private static readonly string[] PurgeBanlist =

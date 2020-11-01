@@ -101,7 +101,9 @@ namespace NHSE.Sprites
                             geneIndex = (tile.ExtensionY << 1) | tile.ExtensionX;
                             tile = layer.GetTile(x - tile.ExtensionX, y - tile.ExtensionY);
                         }
-                        var geneValue = ((uint)tile.Genes >> (geneIndex * 2)) & 3;
+
+                        var genes = ((uint)tile.Genes ^ 0b00_11_00_00); // invert W bits
+                        var geneValue = (genes >> (geneIndex * 2)) & 3;
                         if (geneValue == 0)
                             continue;
                         DrawGene(data, (x - x0) * scale, (y - y0) * scale, scale, w, geneValue, geneIndex);
@@ -188,6 +190,8 @@ namespace NHSE.Sprites
         {
             var eX = tile.ExtensionX;
             var eY = tile.ExtensionY;
+            if (eX == 0 && eY == 0)
+                return;
             var sum = eX + eY;
             var start = scale / (sum + 1);
             var startX = eX >= eY ? 0 : start;
@@ -235,7 +239,7 @@ namespace NHSE.Sprites
             return DrawViewReticle(dest, layer, x, y);
         }
 
-        private static Bitmap DrawViewReticle(Bitmap map, MapGrid g, int x, int y, int scale = 1)
+        private static Bitmap DrawViewReticle(Bitmap map, TileGrid g, int x, int y, int scale = 1)
         {
             using var gfx = Graphics.FromImage(map);
             using var pen = new Pen(Color.Red);

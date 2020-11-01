@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.CB_ItemID = new System.Windows.Forms.ComboBox();
             this.NUD_Count = new System.Windows.Forms.NumericUpDown();
             this.L_Count = new System.Windows.Forms.Label();
@@ -39,7 +40,7 @@
             this.NUD_Flag1 = new System.Windows.Forms.NumericUpDown();
             this.CB_Recipe = new System.Windows.Forms.ComboBox();
             this.FLP_Controls = new System.Windows.Forms.FlowLayoutPanel();
-            this.PB_Item = new System.Windows.Forms.PictureBox();
+            this.PB_Item = new NHSE.WinForms.InterpolatingPictureBox();
             this.FLP_Meta = new System.Windows.Forms.FlowLayoutPanel();
             this.CHK_IsExtension = new System.Windows.Forms.CheckBox();
             this.PAN_DummyExtension = new System.Windows.Forms.Panel();
@@ -90,6 +91,7 @@
             this.CB_WrapColor = new System.Windows.Forms.ComboBox();
             this.CHK_WrapShowName = new System.Windows.Forms.CheckBox();
             this.CHK_Wrap80 = new System.Windows.Forms.CheckBox();
+            this.TT_Search = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Count)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Uses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Flag0)).BeginInit();
@@ -126,6 +128,7 @@
             this.CB_ItemID.Size = new System.Drawing.Size(141, 21);
             this.CB_ItemID.TabIndex = 1;
             this.CB_ItemID.SelectedValueChanged += new System.EventHandler(this.CB_ItemID_SelectedValueChanged);
+            this.CB_ItemID.TextChanged += new System.EventHandler(this.CB_ItemID_TextChanged);
             this.CB_ItemID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CB_KeyDown);
             // 
             // NUD_Count
@@ -140,6 +143,7 @@
             this.NUD_Count.Name = "NUD_Count";
             this.NUD_Count.Size = new System.Drawing.Size(56, 20);
             this.NUD_Count.TabIndex = 2;
+            this.NUD_Count.ValueChanged += new System.EventHandler(this.NUD_Count_ValueChanged);
             // 
             // L_Count
             // 
@@ -150,6 +154,7 @@
             this.L_Count.TabIndex = 7;
             this.L_Count.Text = "Count:";
             this.L_Count.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.L_Count.DoubleClick += new System.EventHandler(this.L_Count_DoubleClick);
             // 
             // L_Uses
             // 
@@ -260,6 +265,7 @@
             this.PB_Item.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PB_Item.TabIndex = 28;
             this.PB_Item.TabStop = false;
+            this.PB_Item.Click += new System.EventHandler(this.PB_Item_Click);
             // 
             // FLP_Meta
             // 
@@ -905,6 +911,13 @@
             this.CHK_Wrap80.UseVisualStyleBackColor = true;
             this.CHK_Wrap80.Visible = false;
             // 
+            // TT_Search
+            // 
+            this.TT_Search.AutomaticDelay = 200;
+            this.TT_Search.AutoPopDelay = 10000;
+            this.TT_Search.InitialDelay = 200;
+            this.TT_Search.ReshowDelay = 40;
+            // 
             // ItemEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -995,7 +1008,6 @@
         private System.Windows.Forms.NumericUpDown NUD_ExtensionY;
         private System.Windows.Forms.FlowLayoutPanel FLP_Item;
         private System.Windows.Forms.FlowLayoutPanel FLP_Flower;
-        private System.Windows.Forms.PictureBox PB_Item;
         private System.Windows.Forms.CheckBox CHK_IsExtension;
         private System.Windows.Forms.Panel PAN_DummyCount;
         private System.Windows.Forms.Panel PAN_DummyExtension;
@@ -1008,5 +1020,7 @@
         private System.Windows.Forms.ComboBox CB_WrapColor;
         private System.Windows.Forms.CheckBox CHK_WrapShowName;
         private System.Windows.Forms.CheckBox CHK_Wrap80;
+        private System.Windows.Forms.ToolTip TT_Search;
+        private InterpolatingPictureBox PB_Item;
     }
 }

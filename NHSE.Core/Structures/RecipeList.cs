@@ -158,8 +158,16 @@ namespace NHSE.Core
             {0x0C7, 04104}, // frying pan
             {0x0C8, 05150}, // shell speaker
             {0x0C9, 03439}, // wooden table
+            {0x0CA, 04090}, // spooky table
             {0x0CB, 04066}, // illuminated tree
             {0x0CC, 03406}, // beekeeper's hive
+            {0x0CD, 04083}, // spooky arch
+            {0x0CE, 04084}, // spooky scarecrow
+            {0x0CF, 04086}, // spooky tower
+            {0x0D0, 04087}, // spooky carriage
+            {0x0D1, 04088}, // spooky lantern
+            {0x0D2, 04089}, // spooky chair
+            {0x0D4, 04092}, // spooky lantern set
             {0x0D5, 03588}, // signpost
             {0x0D6, 03785}, // potted ivy
             {0x0D7, 01058}, // music stand
@@ -601,6 +609,27 @@ namespace NHSE.Core
             {0x2C9, 12758}, // hedge
             {0x2CA, 12894}, // wedding fence
             {0x2CB, 12695}, // wedding wand
+            {0x2CC, 05607}, // King Tut mask (Gold)
+            {0x2CD, 12552}, // mermaid table
+            {0x2CE, 12553}, // mermaid shelf
+            {0x2CF, 12554}, // mermaid vanity
+            {0x2D0, 12555}, // mermaid screen
+            {0x2D1, 12556}, // mermaid lamp
+            {0x2D2, 12557}, // mermaid wall clock
+            {0x2D3, 12558}, // mermaid bed
+            {0x2D4, 12559}, // mermaid closet
+            {0x2D5, 12560}, // mermaid sofa
+            {0x2D6, 12561}, // mermaid dresser
+            {0x2D7, 12562}, // mermaid chair
+            {0x2D8, 12563}, // mermaid rug
+            {0x2D9, 12566}, // mermaid wall
+            {0x2DA, 12568}, // mermaid flooring
+            {0x2DC, 12951}, // spooky candy set
+            {0x2DD, 12949}, // spooky standing lamp
+            {0x2DE, 13222}, // spooky garland
+            {0x2DF, 13223}, // spooky table setting
+            {0x2E0, 13237}, // spooky wand
+            {0x2E1, 13275}, // spooky fence
         };
     }
 }

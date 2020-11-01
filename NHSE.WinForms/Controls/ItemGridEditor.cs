@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using NHSE.Core;
 using NHSE.Sprites;
@@ -220,16 +221,86 @@ namespace NHSE.WinForms
             ItemUpdated();
         }
 
-        private void B_Clear_Click(object sender, EventArgs e)
+        private static void ShowContextMenuBelow(ToolStripDropDown c, Control n) => c.Show(n.PointToScreen(new Point(0, n.Height)));
+        private void B_Clear_Click(object sender, EventArgs e) => ShowContextMenuBelow(CM_Remove, B_Clear);
+
+        private void ClearItemIf(Func<Item, bool> criteria)
         {
-            for (int i = 0; i < SlotPictureBoxes.Count; i++)
+            bool all = ModifierKeys == Keys.Shift;
+            int start = 0, end = Items.Count - 1;
+            if (!all)
             {
-                var item = GetItem(i);
-                item.Delete();
+                start = ItemsPerPage * Page;
+                end = start + ItemsPerPage;
+            }
+            for (int i = start; i < end; i++)
+            {
+                var item = Items[i];
+                if (criteria(item))
+                    item.Delete();
             }
             LoadItems();
             System.Media.SystemSounds.Asterisk.Play();
         }
+
+        private void B_Sort_Click(object sender, EventArgs e) => ShowContextMenuBelow(CM_Sort, B_Sort);
+        private void B_SortAlpha_Click(object sender, EventArgs e)
+        {
+            var sortedItems = Items.Where(item => item.ItemId != Item.NONE)
+                .OrderBy(item => GetItemText(item).ToLower());
+            var sortedItemsCopy = new List<Item>(); // to prevent object reference issues
+
+            foreach(var item in sortedItems)
+            {
+                var itemCopy = new Item();
+                itemCopy.CopyFrom(item);
+                sortedItemsCopy.Add(itemCopy);
+            }
+
+            SetEditorItems(sortedItemsCopy);
+        }
+
+        private void B_SortType_Click(object sender, EventArgs e)
+        {
+            var sortedItems = Items.Where(item => item.ItemId != Item.NONE)
+                .OrderBy(item => ItemInfo.GetItemKind(item))
+                .ThenBy(item => GetItemText(item).ToLower());
+            var sortedItemsCopy = new List<Item>(); // to prevent object reference issues
+
+            foreach (var item in sortedItems)
+            {
+                var itemCopy = new Item();
+                itemCopy.CopyFrom(item);
+                sortedItemsCopy.Add(itemCopy);
+            }
+
+            SetEditorItems(sortedItemsCopy);
+        }
+
+        private void SetEditorItems(IReadOnlyList<Item> items)
+        {
+            if (items.Count > Items.Count)
+                return;
+
+            for (int i = 0; i < Items.Count; i++)
+            {
+                var src = i < items.Count ? items[i] : Item.NO_ITEM;
+                GetItem(i).CopyFrom(src);
+                ItemUpdated();
+            }
+
+            LoadItems();
+            Editor.LoadItem(Item.NO_ITEM);
+            System.Media.SystemSounds.Asterisk.Play();
+        }
+
+        private void B_ClearAll_Click(object sender, EventArgs e) => ClearItemIf(_ => true);
+        private void B_ClearClothing_Click(object sender, EventArgs e) => ClearItemIf(z => ItemInfo.GetItemKind(z).IsClothing());
+        private void B_ClearCrafting_Click(object sender, EventArgs e) => ClearItemIf(z => ItemInfo.GetItemKind(z).IsCrafting());
+        private void B_ClearFurniture_Click(object sender, EventArgs e) => ClearItemIf(z => ItemInfo.GetItemKind(z).IsFurniture());
+        private void B_ClearBugs_Click(object sender, EventArgs e) => ClearItemIf(z => GameLists.Bugs.Contains(z.ItemId));
+        private void B_ClearFish_Click(object sender, EventArgs e) => ClearItemIf(z => GameLists.Fish.Contains(z.ItemId));
+        private void B_ClearDive_Click(object sender, EventArgs e) => ClearItemIf(z => GameLists.Dive.Contains(z.ItemId));
 
         private class GridSize : IGridItem
         {

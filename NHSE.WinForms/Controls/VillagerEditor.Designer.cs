@@ -32,6 +32,14 @@
             this.B_EditVillagerFlags = new System.Windows.Forms.Button();
             this.CHK_VillagerMovingOut = new System.Windows.Forms.CheckBox();
             this.B_EditVillager = new System.Windows.Forms.Button();
+            this.CM_EditVillager = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.B_EditFurniture = new System.Windows.Forms.ToolStripMenuItem();
+            this.B_EditWear = new System.Windows.Forms.ToolStripMenuItem();
+            this.B_EditVillagerRoom = new System.Windows.Forms.ToolStripMenuItem();
+            this.B_EditVillagerDesign = new System.Windows.Forms.ToolStripMenuItem();
+            this.B_EditVillagerPlayerMemories = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSS_toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.B_MoveOutAllVillagers = new System.Windows.Forms.ToolStripMenuItem();
             this.B_LoadVillager = new System.Windows.Forms.Button();
             this.B_DumpVillager = new System.Windows.Forms.Button();
             this.L_ExternalName = new System.Windows.Forms.Label();
@@ -48,16 +56,12 @@
             this.L_VillagerID = new System.Windows.Forms.Label();
             this.NUD_Villager = new System.Windows.Forms.NumericUpDown();
             this.B_EditHouses = new System.Windows.Forms.Button();
-            this.CM_EditVillager = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.B_EditFurniture = new System.Windows.Forms.ToolStripMenuItem();
-            this.B_EditVillagerRoom = new System.Windows.Forms.ToolStripMenuItem();
-            this.B_EditVillagerDesign = new System.Windows.Forms.ToolStripMenuItem();
-            this.B_EditVillagerPlayerMemories = new System.Windows.Forms.ToolStripMenuItem();
+            this.B_SetPhraseOriginal = new System.Windows.Forms.Button();
+            this.CM_EditVillager.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Variant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Species)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Villager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Villager)).BeginInit();
-            this.CM_EditVillager.SuspendLayout();
             this.SuspendLayout();
             // 
             // B_EditVillagerFlags
@@ -83,6 +87,7 @@
             // 
             // B_EditVillager
             // 
+            this.B_EditVillager.ContextMenuStrip = this.CM_EditVillager;
             this.B_EditVillager.Location = new System.Drawing.Point(297, 165);
             this.B_EditVillager.Name = "B_EditVillager";
             this.B_EditVillager.Size = new System.Drawing.Size(92, 40);
@@ -90,6 +95,61 @@
             this.B_EditVillager.Text = "Edit Villager...";
             this.B_EditVillager.UseVisualStyleBackColor = true;
             this.B_EditVillager.Click += new System.EventHandler(this.B_EditVillager_Click);
+            // 
+            // CM_EditVillager
+            // 
+            this.CM_EditVillager.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.B_EditFurniture,
+            this.B_EditWear,
+            this.B_EditVillagerRoom,
+            this.B_EditVillagerDesign,
+            this.B_EditVillagerPlayerMemories,
+            this.TSS_toolStripSeparator1,
+            this.B_MoveOutAllVillagers});
+            this.CM_EditVillager.Name = "CM_EditPlayer";
+            this.CM_EditVillager.Size = new System.Drawing.Size(186, 114);
+            // 
+            // B_EditFurniture
+            // 
+            this.B_EditFurniture.Name = "B_EditFurniture";
+            this.B_EditFurniture.Size = new System.Drawing.Size(185, 22);
+            this.B_EditFurniture.Text = "Edit Furniture";
+            this.B_EditFurniture.Click += new System.EventHandler(this.B_EditFurniture_Click);
+            // 
+            // B_EditWear
+            // 
+            this.B_EditWear.Name = "B_EditWear";
+            this.B_EditWear.Size = new System.Drawing.Size(185, 22);
+            this.B_EditWear.Text = "Edit Wear";
+            this.B_EditWear.Click += new System.EventHandler(this.B_EditWear_Click);
+            // 
+            // B_EditVillagerRoom
+            // 
+            this.B_EditVillagerRoom.Name = "B_EditVillagerRoom";
+            this.B_EditVillagerRoom.Size = new System.Drawing.Size(185, 22);
+            this.B_EditVillagerRoom.Text = "Edit Room";
+            this.B_EditVillagerRoom.Click += new System.EventHandler(this.B_EditVillagerRoom_Click);
+            // 
+            // B_EditVillagerDesign
+            // 
+            this.B_EditVillagerDesign.Name = "B_EditVillagerDesign";
+            this.B_EditVillagerDesign.Size = new System.Drawing.Size(185, 22);
+            this.B_EditVillagerDesign.Text = "Edit Design Pattern";
+            this.B_EditVillagerDesign.Click += new System.EventHandler(this.B_EditVillagerDesign_Click);
+            // 
+            // B_EditVillagerPlayerMemories
+            // 
+            this.B_EditVillagerPlayerMemories.Name = "B_EditVillagerPlayerMemories";
+            this.B_EditVillagerPlayerMemories.Size = new System.Drawing.Size(185, 22);
+            this.B_EditVillagerPlayerMemories.Text = "Edit Player Memories";
+            this.B_EditVillagerPlayerMemories.Click += new System.EventHandler(this.B_EditVillagerPlayerMemories_Click);
+            // 
+            // B_MoveOutAllVillagers
+            // 
+            this.B_MoveOutAllVillagers.Name = "B_MoveOutAllVillagers";
+            this.B_MoveOutAllVillagers.Size = new System.Drawing.Size(185, 22);
+            this.B_MoveOutAllVillagers.Text = "Box All Villagers";
+            this.B_MoveOutAllVillagers.Click += new System.EventHandler(this.B_MoveOutAllVillagers_Click);
             // 
             // B_LoadVillager
             // 
@@ -251,48 +311,21 @@
             this.B_EditHouses.UseVisualStyleBackColor = true;
             this.B_EditHouses.Click += new System.EventHandler(this.B_EditHouse_Click);
             // 
-            // CM_EditVillager
+            // B_SetPhraseOriginal
             // 
-            this.CM_EditVillager.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.B_EditFurniture,
-            this.B_EditVillagerRoom,
-            this.B_EditVillagerDesign,
-            this.B_EditVillagerPlayerMemories});
-            this.CM_EditVillager.Name = "CM_EditPlayer";
-            this.CM_EditVillager.Size = new System.Drawing.Size(186, 114);
-            // 
-            // B_EditFurniture
-            // 
-            this.B_EditFurniture.Name = "B_EditFurniture";
-            this.B_EditFurniture.Size = new System.Drawing.Size(185, 22);
-            this.B_EditFurniture.Text = "Edit Furniture";
-            this.B_EditFurniture.Click += new System.EventHandler(this.B_EditFurniture_Click);
-            // 
-            // B_EditVillagerRoom
-            // 
-            this.B_EditVillagerRoom.Name = "B_EditVillagerRoom";
-            this.B_EditVillagerRoom.Size = new System.Drawing.Size(185, 22);
-            this.B_EditVillagerRoom.Text = "Edit Room";
-            this.B_EditVillagerRoom.Click += new System.EventHandler(this.B_EditVillagerRoom_Click);
-            // 
-            // B_EditVillagerDesign
-            // 
-            this.B_EditVillagerDesign.Name = "B_EditVillagerDesign";
-            this.B_EditVillagerDesign.Size = new System.Drawing.Size(185, 22);
-            this.B_EditVillagerDesign.Text = "Edit Design Pattern";
-            this.B_EditVillagerDesign.Click += new System.EventHandler(this.B_EditVillagerDesign_Click);
-            // 
-            // B_EditVillagerPlayerMemories
-            // 
-            this.B_EditVillagerPlayerMemories.Name = "B_EditVillagerPlayerMemories";
-            this.B_EditVillagerPlayerMemories.Size = new System.Drawing.Size(185, 22);
-            this.B_EditVillagerPlayerMemories.Text = "Edit Player Memories";
-            this.B_EditVillagerPlayerMemories.Click += new System.EventHandler(this.B_EditVillagerPlayerMemories_Click);
+            this.B_SetPhraseOriginal.Location = new System.Drawing.Point(335, 70);
+            this.B_SetPhraseOriginal.Name = "B_SetPhraseOriginal";
+            this.B_SetPhraseOriginal.Size = new System.Drawing.Size(54, 20);
+            this.B_SetPhraseOriginal.TabIndex = 48;
+            this.B_SetPhraseOriginal.Text = "Original";
+            this.B_SetPhraseOriginal.UseVisualStyleBackColor = true;
+            this.B_SetPhraseOriginal.Click += new System.EventHandler(this.B_SetPhraseOriginal_Click);
             // 
             // VillagerEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.B_SetPhraseOriginal);
             this.Controls.Add(this.B_EditHouses);
             this.Controls.Add(this.B_EditVillagerFlags);
             this.Controls.Add(this.CHK_VillagerMovingOut);
@@ -314,11 +347,11 @@
             this.Controls.Add(this.NUD_Villager);
             this.Name = "VillagerEditor";
             this.Size = new System.Drawing.Size(397, 214);
+            this.CM_EditVillager.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Variant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Species)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Villager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Villager)).EndInit();
-            this.CM_EditVillager.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,5 +383,9 @@
         private System.Windows.Forms.ToolStripMenuItem B_EditVillagerRoom;
         private System.Windows.Forms.ToolStripMenuItem B_EditVillagerDesign;
         private System.Windows.Forms.ToolStripMenuItem B_EditVillagerPlayerMemories;
+        private System.Windows.Forms.ToolStripSeparator TSS_toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem B_MoveOutAllVillagers;
+        private System.Windows.Forms.ToolStripMenuItem B_EditWear;
+        private System.Windows.Forms.Button B_SetPhraseOriginal;
     }
 }

@@ -21,7 +21,8 @@ namespace NHSE.Core
         public abstract int PatternFlag { get; }
         public abstract int PatternTailor { get; }
 
-        public abstract int Hemisphere { get; }
+        public abstract int WeatherArea { get; }
+        public abstract int WeatherRandSeed { get; }
 
         public abstract int MainFieldStructure { get; }
 
@@ -43,6 +44,9 @@ namespace NHSE.Core
         public abstract int LostItemBox { get; }
         public abstract int LastSavedTime { get; }
 
+        public abstract int VillagerSize { get; }
+        public abstract IVillager ReadVillager(byte[] data);
+
         public static MainSaveOffsets GetOffsets(FileHeaderInfo Info)
         {
             var rev = Info.GetKnownRevisionIndex();
@@ -55,7 +59,15 @@ namespace NHSE.Core
                 4 => new MainSaveOffsets11(),
                 5 => new MainSaveOffsets11(),
                 6 => new MainSaveOffsets12(),
-                _ => throw new IndexOutOfRangeException("Unknown revision!"),
+                7 => new MainSaveOffsets12(),
+                8 => new MainSaveOffsets13(),
+                9 => new MainSaveOffsets13(),
+                10 => new MainSaveOffsets14(),
+                11 => new MainSaveOffsets14(),
+                12 => new MainSaveOffsets14(),
+                13 => new MainSaveOffsets15(),
+                14 => new MainSaveOffsets15(),
+                _ => throw new IndexOutOfRangeException("Unknown revision!" + Environment.NewLine + Info),
             };
         }
 
@@ -100,19 +112,22 @@ namespace NHSE.Core
             p.Data.CopyTo(data, PatternsPRO + (index * DesignPatternPRO.SIZE));
         }
 
-        public Villager ReadVillager(byte[] data, int index)
+        public IVillager ReadVillager(byte[] data, int index)
         {
             if ((uint)index >= VillagerCount)
                 throw new ArgumentOutOfRangeException(nameof(index));
-            var v = data.Slice(Animal + (index * Villager.SIZE), Villager.SIZE);
-            return new Villager(v);
+
+            var size = VillagerSize;
+            var v = data.Slice(Animal + (index * size), size);
+            return ReadVillager(v);
         }
 
-        public void WriteVillager(Villager v, byte[] data, int index)
+        public void WriteVillager(IVillager v, byte[] data, int index)
         {
             if ((uint)index >= VillagerCount)
                 throw new ArgumentOutOfRangeException(nameof(index));
-            v.Data.CopyTo(data, Animal + (index * Villager.SIZE));
+            var size = VillagerSize;
+            v.Write().CopyTo(data, Animal + (index * size));
         }
     }
 }

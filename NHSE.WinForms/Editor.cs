@@ -56,7 +56,7 @@ namespace NHSE.WinForms
 
             Task.Run(() =>
             {
-                ItemSprite.Initialize(Main.ItemPath, GameInfo.GetStrings("en").itemlist);
+                ItemSprite.Initialize(GameInfo.GetStrings("en").itemlist);
                 TranslationUtil.SetLocalization(typeof(MessageStrings), lang);
                 TranslationUtil.SetLocalization(GameInfo.Strings.InternalNameTranslation, lang);
             });
@@ -144,6 +144,19 @@ namespace NHSE.WinForms
             sysbot.Show();
         }
 
+        private void Menu_ItemImages_Click(object sender, EventArgs e)
+        {
+            var exist = WinFormsUtil.FirstFormOfType<ImageFetcher>();
+            if (exist != null)
+            {
+                exist.Show();
+                return;
+            }
+
+            var imgfetcher = new ImageFetcher();
+            imgfetcher.Show();
+        }
+
         private void ReloadAll()
         {
             Villagers.Villagers = SAV.Main.GetVillagers();
@@ -180,6 +193,7 @@ namespace NHSE.WinForms
             foreach (var n in names)
                 CB_AirportColor.Items.Add(n);
             CB_AirportColor.SelectedIndex = (int)m.AirportThemeColor;
+            NUD_WeatherSeed.Value = m.WeatherSeed;
         }
 
         private void SaveMain()
@@ -187,6 +201,7 @@ namespace NHSE.WinForms
             var m = SAV.Main;
             m.Hemisphere = (Hemisphere)CB_Hemisphere.SelectedIndex;
             m.AirportThemeColor = (AirportColor)CB_AirportColor.SelectedIndex;
+            m.WeatherSeed = (uint)NUD_WeatherSeed.Value;
         }
 
         #region Player Editing
@@ -212,7 +227,7 @@ namespace NHSE.WinForms
                 var bag = pers.Bag;
                 var pocket = pers.Pocket;
                 var items = pocket.Concat(bag).ToArray();
-                using var editor = new PlayerItemEditor<Item>(items, 10, 4, sysbot: true);
+                using var editor = new PlayerItemEditor(items, 10, 4, sysbot: true);
                 if (editor.ShowDialog() != DialogResult.OK)
                     return;
 
@@ -226,7 +241,7 @@ namespace NHSE.WinForms
             var player = SAV.Players[PlayerIndex];
             var pers = player.Personal;
             var p1 = pers.ItemChest;
-            using var editor = new PlayerItemEditor<Item>(p1, 10, 5);
+            using var editor = new PlayerItemEditor(p1, 10, 5);
             if (editor.ShowDialog() == DialogResult.OK)
                 pers.ItemChest = p1;
         }
@@ -234,7 +249,7 @@ namespace NHSE.WinForms
         private void B_RecycleBin_Click(object sender, EventArgs e)
         {
             var items = SAV.Main.RecycleBin;
-            using var editor = new PlayerItemEditor<Item>(items, 10, 4);
+            using var editor = new PlayerItemEditor(items, 10, 4);
             if (editor.ShowDialog() == DialogResult.OK)
                 SAV.Main.RecycleBin = items;
         }
@@ -354,10 +369,8 @@ namespace NHSE.WinForms
         private void B_EditAchievements_Click(object sender, EventArgs e)
         {
             var pers = SAV.Players[PlayerIndex].Personal;
-            var records = pers.GetCountAchievement();
-            using var editor = new AchievementEditor(records);
-            if (editor.ShowDialog() == DialogResult.OK)
-                pers.SetCountAchievement(records);
+            using var editor = new AchievementEditor(pers);
+            editor.ShowDialog();
         }
 
         private void B_EditPlayerFlags_Click(object sender, EventArgs e)
@@ -490,5 +503,8 @@ namespace NHSE.WinForms
             if (editor.ShowDialog() == DialogResult.OK)
                 SAV.Main.Visitor = boxed;
         }
+
+        private void NUD_PocketCount_ValueChanged(object sender, EventArgs e) => ((NumericUpDown) sender).BackColor = (uint) ((NumericUpDown) sender).Value > 20 ? Color.Red : NUD_BankBells.BackColor;
+        private void NUD_Wallet_ValueChanged(object sender, EventArgs e) => NUD_Wallet.BackColor = (ulong) NUD_Wallet.Value > 99_999 ? Color.Red : NUD_BankBells.BackColor;
     }
 }

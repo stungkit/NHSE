@@ -15,7 +15,8 @@
         public override int PatternTailor => PatternFlag + DesignPattern.SIZE;
 
         public const int GSaveWeather = GSaveLandStart + 0x1D6F98;
-        public override int Hemisphere => GSaveWeather + 0x14;
+        public override int WeatherArea => GSaveWeather + 0x14; // Hemisphere
+        public override int WeatherRandSeed => GSaveWeather + 0x18;
 
         public override int EventFlagLand => GSaveLandStart + 0x20100C;
 
@@ -45,5 +46,8 @@
         public override int LostItemBox => GSaveLandOtherStart + 0x5C33F0;
         public override int LastSavedTime => GSaveLandOtherStart + 0x5C7D48;
         #endregion
+
+        public override int VillagerSize => Villager1.SIZE;
+        public override IVillager ReadVillager(byte[] data) => new Villager1(data);
     }
 }

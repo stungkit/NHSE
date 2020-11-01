@@ -9,17 +9,22 @@ namespace NHSE.WinForms
     {
         private readonly AutoInjector Injector;
         private readonly SysBotController Bot;
+        private readonly AutoInjector InjectorUSB;
+        private readonly USBBotController BotUSB;
 
-        public SysBotUI(AutoInjector injector, SysBotController c)
+        public SysBotUI(AutoInjector injector, SysBotController c, AutoInjector injectorUSB, USBBotController b)
         {
             InitializeComponent();
             this.TranslateInterface(GameInfo.CurrentLanguage);
             Bot = c;
             Injector = injector;
+            BotUSB = b;
+            InjectorUSB = injectorUSB;
 
             var offset = Bot.GetDefaultOffset();
             Injector.SetWriteOffset(offset);
             RamOffset.Text = offset.ToString("X8");
+            RamOffsetUSB.Text = offset.ToString("X8");
 
             TB_IP.Text = Bot.IP;
             TB_Port.Text = Bot.Port;
@@ -121,6 +126,84 @@ namespace NHSE.WinForms
             }
 
             Injector.SetWriteOffset(offset);
+            Bot.SetOffset(offset);
+        }
+
+        private void ReadUSB_Click(object sender, EventArgs e)
+        {
+            if (!BotUSB.Connect())
+                return;
+
+            var offset = StringUtil.GetHexValue(RamOffsetUSB.Text);
+            if (offset == 0)
+            {
+                WinFormsUtil.Error(MessageStrings.MsgInvalidHexValue);
+                return;
+            }
+
+            InjectorUSB.SetWriteOffset(offset);
+            Bot.SetOffset(offset);
+
+            try
+            {
+                var result = InjectorUSB.Read(true);
+                if (result == InjectionResult.Success)
+                    return;
+                WinFormsUtil.Alert(result.ToString());
+            }
+#pragma warning disable CA1031 // Do not catch general exception types
+            catch (Exception ex)
+#pragma warning restore CA1031 // Do not catch general exception types
+            {
+                WinFormsUtil.Error(ex.Message);
+            }
+
+            BotUSB.Disconnect();
+        }
+
+        private void WriteUSB_Click(object sender, EventArgs e)
+        {
+            if (!BotUSB.Connect())
+                return;
+
+            var offset = StringUtil.GetHexValue(RamOffsetUSB.Text);
+            if (offset == 0)
+            {
+                WinFormsUtil.Error(MessageStrings.MsgInvalidHexValue);
+                return;
+            }
+
+            InjectorUSB.SetWriteOffset(offset);
+            Bot.SetOffset(offset);
+
+            try
+            {
+                var result = InjectorUSB.Write(true);
+                if (result == InjectionResult.Success)
+                    return;
+                WinFormsUtil.Alert(result.ToString());
+            }
+#pragma warning disable CA1031 // Do not catch general exception types
+            catch (Exception ex)
+#pragma warning restore CA1031 // Do not catch general exception types
+            {
+                WinFormsUtil.Error(ex.Message);
+            }
+
+            BotUSB.Disconnect();
+        }
+
+        private void RamOffsetUSB_TextChanged(object sender, EventArgs e)
+        {
+            var offset = StringUtil.GetHexValue(RamOffsetUSB.Text);
+            if (offset == 0)
+            {
+                WinFormsUtil.Error(MessageStrings.MsgInvalidHexValue);
+                return;
+            }
+
+            Injector.SetWriteOffset(offset);
+            Bot.SetOffset(offset);
         }
     }
 }

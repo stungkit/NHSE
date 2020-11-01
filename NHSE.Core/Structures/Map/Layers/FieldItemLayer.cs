@@ -5,7 +5,11 @@ namespace NHSE.Core
 {
     public class FieldItemLayer : ItemLayer
     {
-        public FieldItemLayer(Item[] tiles) : base(tiles, 32 * AcreWidth, 32 * AcreHeight, 32, 32)
+        public const int TilesPerAcreDim = 32;
+        public const int FieldItemWidth = TilesPerAcreDim * AcreWidth;
+        public const int FieldItemHeight = TilesPerAcreDim * AcreHeight;
+
+        public FieldItemLayer(Item[] tiles) : base(tiles, FieldItemWidth, FieldItemHeight, TilesPerAcreDim, TilesPerAcreDim)
         {
         }
 
@@ -83,6 +87,7 @@ namespace NHSE.Core
 
         public int RemoveAllHoles(int xmin, int ymin, int width, int height) => ClearFieldPlanted(xmin, ymin, width, height, z => z == FieldItemKind.UnitIconHole);
         public int RemoveAllWeeds(int xmin, int ymin, int width, int height) => ClearFieldPlanted(xmin, ymin, width, height, z => z.IsWeed());
+        public int RemoveAllTrees(int xmin, int ymin, int width, int height) => ClearFieldPlanted(xmin, ymin, width, height, z => z.IsTree());
         public int RemoveAllPlants(int xmin, int ymin, int width, int height) => ClearFieldPlanted(xmin, ymin, width, height, z => z.IsPlant());
         public int RemoveAllFences(int xmin, int ymin, int width, int height) => ClearFieldPlanted(xmin, ymin, width, height, z => z.IsFence());
         public int RemoveAllFlowers(int xmin, int ymin, int width, int height) => ClearFieldPlanted(xmin, ymin, width, height, z => z.IsFlower());

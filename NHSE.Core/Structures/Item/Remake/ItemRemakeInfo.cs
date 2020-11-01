@@ -2,6 +2,9 @@
 
 namespace NHSE.Core
 {
+    /// <summary>
+    /// Metadata for an item's customization permissions
+    /// </summary>
     public class ItemRemakeInfo
     {
         public const int BodyColorCountMax = 8;
@@ -75,7 +78,7 @@ namespace NHSE.Core
             if (c0 == (byte) ItemCustomColor.None)
             {
                 if (c1 == (byte) ItemCustomColor.None)
-                    return "Invalid";
+                    return Invalid;
                 return GetColorText(c1);
             }
 
@@ -100,16 +103,14 @@ namespace NHSE.Core
             for (int i = 0; i < 8; i++)
             {
                 var cd = GetBodyDescription(i);
-                if (cd == Invalid)
-                    continue;
-
-                sb.Append(i).Append('=');
-
                 var name = $"{ItemUniqueID:00000}_{i}";
-                if (str.BodyColor.TryGetValue(name, out var desc))
-                    sb.Append(desc).Append(" (").Append(cd).AppendLine(")");
-                else
-                    sb.AppendLine(cd);
+                var hasBody = str.BodyColor.TryGetValue(name, out var desc);
+
+                if (hasBody && cd != Invalid)
+                    sb.Append(i).Append('=').Append(desc).Append(" (").Append(cd).AppendLine(")");
+                else if (hasBody)
+                    sb.Append(i).Append('=').AppendLine(desc);
+                // else don't add anything
             }
             return sb.ToString();
         }

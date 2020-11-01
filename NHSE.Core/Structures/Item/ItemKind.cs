@@ -1,7 +1,11 @@
-﻿using static NHSE.Core.ItemKind;
+﻿using System.Collections.Generic;
+using static NHSE.Core.ItemKind;
 
 namespace NHSE.Core
 {
+    /// <summary>
+    /// Kinds of items
+    /// </summary>
 #pragma warning disable CA1027 // Mark enums with FlagsAttribute
     public enum ItemKind : byte
 #pragma warning restore CA1027 // Mark enums with FlagsAttribute
@@ -18,17 +22,21 @@ namespace NHSE.Core
         Kind_AutumnLeaf,
         Kind_Axe,
         Kind_Bag,
+        Kind_Balloon,
         Kind_BdayCupcake,
+        Kind_BlowBubble,
         Kind_BridgeItem,
         Kind_Bromide,
         Kind_Bush,
         Kind_BushSeedling,
+        Kind_Candy,
         Kind_Cap,
         Kind_ChangeStick,
         Kind_CliffMaker,
         Kind_CraftMaterial,
         Kind_CraftPhoneCase,
         Kind_CraftRemake,
+        Kind_DiveFish,
         Kind_DIYRecipe,
         Kind_DoorDeco,
         Kind_DummyCardboard,
@@ -41,6 +49,8 @@ namespace NHSE.Core
         Kind_EasterEgg,
         Kind_EventObjFtr,
         Kind_Fence,
+        Kind_FierworkHand,
+        Kind_FireworkM,
         Kind_Fish,
         Kind_FishBait,
         Kind_FishingRod,
@@ -54,6 +64,7 @@ namespace NHSE.Core
         Kind_Ftr,
         Kind_Giftbox,
         Kind_GroundMaker,
+        Kind_HandheldPennant,
         Kind_Helmet,
         Kind_Honeycomb,
         Kind_HousePost,
@@ -84,11 +95,13 @@ namespace NHSE.Core
         Kind_Ocarina,
         Kind_Ore,
         Kind_Panflute,
+        Kind_Partyhorn,
         Kind_PartyPopper,
         Kind_PhotoStudioList,
         Kind_Picture,
         Kind_PictureFake,
         Kind_PinataStick,
+        Kind_PirateQuest,
         Kind_PitFallSeed,
         Kind_PlayerDemoOutfit,
         Kind_Poster,
@@ -125,12 +138,16 @@ namespace NHSE.Core
         Kind_TurnipExpired,
         Kind_Uchiwa,
         Kind_Umbrella,
+        Kind_VegeSeedling,
         Kind_Vegetable,
+        Kind_VegeTree,
         Kind_Watering,
         Kind_Weed,
+        Kind_Windmill,
         Kind_WoodenStickTool,
         Kind_WrappingPaper,
         Kind_YutaroWisp,
+        Kind_XmasDeco,
         Onepiece_Dress,
         Onepiece_Long,
         Onepiece_Middle,
@@ -154,6 +171,44 @@ namespace NHSE.Core
 
     public static class ItemKindExtensions
     {
+        private static readonly HashSet<ItemKind> Clothing = new HashSet<ItemKind>
+        {
+            Bottoms_Long,
+            Bottoms_Middle,
+            Bottoms_Short,
+            Kind_Accessory,
+            Kind_Bag,
+            Kind_Cap,
+            Kind_Helmet,
+            Kind_NpcOutfit,
+            Kind_PlayerDemoOutfit,
+            Kind_Socks,
+            Onepiece_Dress,
+            Onepiece_Long,
+            Onepiece_Middle,
+            Onepiece_Short,
+            Shoes_Boots,
+            Shoes_Pumps,
+            Top_Long,
+            Top_Middle,
+            Top_Short,
+        };
+
+        private static readonly HashSet<ItemKind> Furniture = new HashSet<ItemKind>
+        {
+            Ftr_1x1_Chair,
+            Ftr_1x1_Floor,
+            Ftr_2x1_Bed,
+            Ftr_2x1_Floor,
+            Ftr_2x2_Floor,
+            Kind_DummyFtr,
+            Kind_EventObjFtr,
+            Kind_Ftr,
+        };
+
         public static bool IsFlower(this ItemKind k) => (Kind_Flower <= k && k <= Kind_FlowerBud) || (UnitIcon_FlwAnemone <= k && k <= UnitIcon_FlwTulip);
+        public static bool IsClothing(this ItemKind k) => Clothing.Contains(k);
+        public static bool IsCrafting(this ItemKind k) => k == Kind_Ore || k == Kind_CraftMaterial || k == Kind_CraftPhoneCase || k == Kind_CraftRemake;
+        public static bool IsFurniture(this ItemKind k) => Furniture.Contains(k);
     }
 }

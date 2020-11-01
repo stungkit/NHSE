@@ -233,7 +233,7 @@ stego tail
 
 
 plesio skull
-plesio body
+plesio torso
 plesio tail
 
 T. rex skull
@@ -1180,7 +1180,7 @@ foosball table
 
 
 tennis table
-
+bamboo grass
 
 
 phone box
@@ -1266,12 +1266,12 @@ pear wardrobe
 
 barrel
 
+pirate-ship cannon
 
 
 
 
-
-
+pirate-ship helm
 
 
 
@@ -2609,7 +2609,7 @@ wooden simple bed
 
 ribbon (Green)
 ribbon (Red)
-
+star bopper (Yellow)
 
 
 mountain bike
@@ -2618,7 +2618,7 @@ ladder
 
 
 
-
+seaweed
 
 
 
@@ -2828,35 +2828,35 @@ dress shirt (White)
 
 
 
+sea grapes
+sea urchin
+acorn barnacle
+oyster
+turban shell
+abalone
 
 
+pearl oyster
+scallop
+sea anemone
+sea star
+sea cucumber
+sea slug
+flatworm
+mantis shrimp
+sweet shrimp
+tiger prawn
+spiny lobster
+lobster
+snow crab
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+red king crab
+spider crab
+octopus
+spotted garden eel
+chambered nautilus
+horseshoe crab
+giant isopod
 
 young white azalea
 white-azalea bush
@@ -3050,8 +3050,8 @@ holly bush
 
 
 
-
-
+small pumpkin sprout
+medium pumpkin sprout
 belted dotted dress (Light blue)
 sailor's tee (Navy blue)
 simple parka (Gray)
@@ -3145,7 +3145,7 @@ diner uniform (Pink)
 short-sleeve dress shirt (White)
 sleeveless dress shirt (White)
 bunny dress (Pink)
-
+sea captain's coat (Red)
 
 
 
@@ -3334,7 +3334,7 @@ timer
 LCD TV (20 in.)
 track jacket (Navy blue)
 track pants (Navy blue)
-cake dress (White)
+wedding dress (White)
 kilt (Red)
 
 waistcoat (Gray)
@@ -3548,7 +3548,7 @@ large snowflake
 
 
 beak (Yellow)
-handlebar mustache (Black)
+handlebar mustache (Hair Color)
 bamboo shelf
 
 bamboo partition
@@ -3582,7 +3582,7 @@ bonsai shelf
 fish-drying rack
 book
 fishing-boat flag
-writing poster
+study poster
 
 magazine
 fishing-rod stand
@@ -3699,8 +3699,8 @@ portable radio
 bowling shirt (Red)
 fish print
 V-neck sweater (Blue)
-writing desk
-writing chair
+study desk
+study chair
 fairy dress (Green)
 kimono sandals (Black)
 boa fleece (White)
@@ -4081,16 +4081,16 @@ barbell
 long bathtub
 camping cot
 
+spooky arch
+spooky scarecrow
 
+spooky tower
+spooky carriage
+spooky lantern
+spooky chair
+spooky table
 
-
-
-
-
-
-
-
-
+spooky lantern set
 bamboo drum
 floating-biotope planter
 
@@ -4293,7 +4293,7 @@ pocket tee (White)
 miko attire (Vermilion)
 cosmos wreath
 
-
+pirate dress (Red)
 corduroy skirt (Brown)
 
 
@@ -4360,7 +4360,7 @@ spiky fence
 fleece pj's (Pink)
 long pleather coat (Black)
 bath-towel wrap (Pink)
-
+large pumpkin sprout
 business suitcoat (Black)
 bell-bottoms (Orange)
 school jacket (Black)
@@ -4384,7 +4384,7 @@ football
 
 
 
-
+bubble blower
 
 
 
@@ -4523,33 +4523,33 @@ pullover jacket (Red)
 muay-thai shorts (Blue)
 dotted shorts (Black)
 tweed vest (Green)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+orange pumpkin
+yellow pumpkin
+green pumpkin
+white pumpkin
+s. orange-pumpkin sprout
+m. orange-pumpkin sprout
+lg. orange-pumpkin sprout
+ripe orange-pumpkin plant
+s. yellow-pumpkin sprout
+m. yellow-pumpkin sprout
+lg. yellow-pumpkin sprout
+ripe yellow-pumpkin plant
+s. green-pumpkin sprout
+m. green-pumpkin sprout
+lg. green-pumpkin sprout
+ripe green-pumpkin plant
+s. white-pumpkin sprout
+m. white-pumpkin sprout
+lg. white-pumpkin sprout
+ripe white-pumpkin plant
 belted wraparound skirt (Yellow)
 pear bed
 embroidered floral skirt (Green)
 embroidered-pattern skirt (Blue)
 fish bait
 
-
+snorkel mask (Blue)
 cyber shades (Red)
 checkered muffler (White)
 
@@ -4670,14 +4670,14 @@ tunic tank (White)
 wooden-frame glasses (Brown)
 
 privacy mask (Black)
-curly mustache (Black)
+curly mustache (Hair Color)
 sports tank (1)
 long chenille cardigan (Mustard)
 ribbon-straps tank (Black)
-goatee (Black)
+goatee (Hair Color)
 bandage (Beige)
 jester's mask (Black)
-rounded beard (Black)
+rounded beard (Hair Color)
 printed fleece sweater (Moss green)
 detective's coat (Brown)
 leaf (Green)
@@ -5140,7 +5140,7 @@ sombrero (Natural & red)
 safety helmet (Yellow)
 chef's hat (White)
 police cap (Navy blue)
-
+pirate's hat (Black)
 bamboo hat (Beige)
 faux-fur hat (Beige)
 do-rag (Yellow)
@@ -5317,7 +5317,7 @@ acorn knit cap (Chestnut)
 combat helmet (Avocado)
 dance-team jacket (Black)
 
-
+uchiwa fan
 ocarina
 
 headkerchief (Green)
@@ -5605,7 +5605,7 @@ DIY for Beginners
 Test Your DIY Skills
 Wildest Dreams DIY
 shiny bow platform shoes (Pink)
-
+King Tut mask (Gold)
 ballet slippers (Pink)
 visual-punk boots (Black)
 rumba costume (Red)
@@ -5740,9 +5740,9 @@ bubblegum (Pink)
 flower sunglasses (Red)
 
 light stick
-
-
-
+tweeter
+red sparkler
+pinwheel
 pretty cosmos wreath
 cool windflower wreath
 fancy rose wreath
@@ -5882,7 +5882,7 @@ lemon skirt (Light blue)
 
 
 
-とたけけのスツール
+
 
 
 
@@ -6811,7 +6811,7 @@ Bam's photo
 
 gingham picnic shirt (Red)
 
-とたけけライブのイス
+
 
 
 
@@ -6918,7 +6918,7 @@ striped umbrella
 tartan-check umbrella
 patterned vinyl umbrella
 bat umbrella
-
+firefly squid
 halo (Gold)
 flip-flops (Green)
 camo umbrella
@@ -7189,7 +7189,7 @@ forest wall
 
 studio spotlight
 studio wall spotlight
-
+gazami crab
 
 
 
@@ -7201,7 +7201,7 @@ athletic jacket (Black)
 athletic jacket (Blue)
 athletic jacket (Berry red)
 athletic jacket (Navy blue)
-
+vampire squid
 cherry-blossom flooring
 cherry-blossom-trees wall
 
@@ -7212,7 +7212,7 @@ bunny ears (Black)
 bridge construction kit
 Sherb's photo
 Dom's photo
-
+gigas giant clam
 cute white wall
 cute red wall
 cute blue wall
@@ -7226,7 +7226,7 @@ cute yellow-tile flooring
 
 
 
-
+sea pineapple
 handcart
 cosmos shower
 tulip surprise box
@@ -7243,14 +7243,14 @@ blue diner wall
 pink diner wall
 gray diner wall
 brown diner wall
-
+moon jellyfish
 
 silo
 
 
 
 diplo tail tip
-
+umbrella octopus
 star clock
 straw umbrella hat (Brown)
 
@@ -7265,7 +7265,7 @@ metal can
 champion's pennant
 
 
-
+slate pencil urchin
 
 
 
@@ -7276,7 +7276,7 @@ pink quilt wall
 purple quilt wall
 yellow quilt wall
 blue quilt wall
-
+whelk
 
 gears
 sleigh
@@ -7301,12 +7301,12 @@ leaf mask (Green)
 
 
 retro sports bag (Blue)
-
+sea pig
 sacoche bag (Blue)
 evening bag (Pink)
 
 
-
+Dungeness crab
 
 
 
@@ -7316,7 +7316,7 @@ evening bag (Pink)
 
 
 zen-style stone
-
+Venus' flower basket
 
 
 
@@ -7409,7 +7409,7 @@ centipede model
 maple-leaf pond stone
 cherry-blossom pond stone
 
-
+mussel
 tiara (Silver)
 
 
@@ -7431,16 +7431,16 @@ noble dress (Black)
 noble dress (Purple)
 noble dress (Yellow)
 noble dress (Red)
+sea captain's coat (Blue)
+sea captain's coat (Black)
 
 
 
 
 
 
-
-
-
-
+pirate dress (Blue)
+pirate dress (Black)
 
 
 concierge uniform (Red)
@@ -7543,7 +7543,7 @@ simple small orange mat
 simple small purple mat
 simple small black mat
 
-
+spooky rug
 Bunny Day rug
 
 school jacket (Berry red)
@@ -7867,7 +7867,7 @@ elaborate kimono stand
 
 angled signpost
 surfboard
-
+blue balloon
 
 
 
@@ -8770,7 +8770,7 @@ fish umbrella
 bug wand
 fish wand
 
-たぬきかいはつヘルメット
+
 stone path permit
 brick path permit
 dark dirt path permit
@@ -9855,9 +9855,9 @@ embroidered shoes (Red)
 floral hairpin (Pink)
 heart hairpin (Pink)
 star hairpin (Yellow)
-
-
-
+bulb bopper (Green)
+flower bopper (Blue)
+heart bopper (Pink)
 barrette (Pink)
 giant ribbon (Red)
 star head (Yellow)
@@ -11491,11 +11491,11 @@ sporty shades (White)
 sporty shades (Pink)
 sporty shades (Lime)
 sporty shades (Light blue)
-
-
-
-
-
+snorkel mask (Orange)
+snorkel mask (Red)
+snorkel mask (Pink)
+snorkel mask (Green)
+snorkel mask (Black)
 cyber shades (Black)
 cyber shades (Silver)
 cyber shades (Purple)
@@ -12171,12 +12171,12 @@ star hairpin (Pink)
 star hairpin (Purple)
 star hairpin (Mint)
 star hairpin (Black)
-polka-dot mini skirt (Beige)
+polka-dot miniskirt (Beige)
 dotted knee-high socks (Black)
 simple knee-high socks (Pink)
-polka-dot mini skirt (Pink)
-polka-dot mini skirt (Blue)
-polka-dot mini skirt (Gray)
+polka-dot miniskirt (Pink)
+polka-dot miniskirt (Blue)
+polka-dot miniskirt (Gray)
 dotted knee-high socks (Yellow)
 dotted knee-high socks (Cyan)
 dotted knee-high socks (Gray)
@@ -12199,7 +12199,7 @@ gingham picnic skirt (Purple)
 gingham picnic skirt (Light blue)
 skull tee (Beige)
 skull tee (Purple)
-ひろばのベンチ
+
 
 
 
@@ -12207,8 +12207,8 @@ skull tee (Purple)
 flat garden rock
 arcade seat
 mossy garden rock
-パニエルのせんたくおけ
-パニエルのものほしロープ
+
+
 
 デモ用たぬきマイルカード
 
@@ -12227,7 +12227,7 @@ Bell-bag rug
 
 
 
-パニエルのいしがま
+
 festive top set
 
 
@@ -12283,7 +12283,7 @@ festive top set
 
 
 
-コミューン島専用柵
+
 
 
 
@@ -12531,8 +12531,8 @@ Bunny Day wreath
 
 
 
-rock-head statue 
-rock-head statue  (forgery)
+rock-head statue
+rock-head statue (forgery)
 informative statue
 informative statue (forgery)
 tremendous statue
@@ -12550,29 +12550,29 @@ heart crystal
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+mermaid table
+mermaid shelf
+mermaid vanity
+mermaid screen
+mermaid lamp
+mermaid wall clock
+mermaid bed
+mermaid closet
+mermaid sofa
+mermaid dresser
+mermaid chair
+mermaid rug
+pirate rug
 Reese & Cyrus photo plate
-
-
-
-
+mermaid wall
+pirate wall
+mermaid flooring
+pirate flooring
 wild painting left half
 wild painting left half (forgery)
-
-
-
+sideways pirate barrel
+pirate-treasure chest
+pirate barrel
 handmade cape (Red)
 handmade crown (Red)
 summer-solstice crown (Yellow)
@@ -12658,15 +12658,15 @@ Bunny Day fence
 
 
 
-
-
-
-
-
-
-
-
-
+mermaid shoes (Pink)
+mermaid tiara (White)
+pirate eye patch (Black)
+pirate beard (Hair Color)
+pirate pants (Black)
+pirate boots (Brown)
+pirate bandanna (Red)
+pirate-treasure robe (Black)
+pirate outfit (Red)
 
 
 
@@ -12795,7 +12795,7 @@ hedge
 
 
 
-
+grape-harvest basket (Brown)
 
 
 
@@ -12919,6 +12919,7 @@ wedding fence
 
 
 
+rodeo-style springy ride-on
 
 
 
@@ -12946,17 +12947,16 @@ wedding fence
 
 
 
+spooky standing lamp
+
+spooky candy set
 
 
 
 
 
-
-
-
-
-
-
+mermaid princess dress (Pink)
+mermaid fishy dress (Pink)
 winter-solstice sweater (Beige)
 
 
@@ -12966,19 +12966,531 @@ winter-solstice sweater (Beige)
 
 
 
+pearl
+
+Nook Inc. wet suit (Green)
+
+
+
+blue sparkler
 
 
 
 
 
-
-
-
-
-
-
-
-
-
+pirate-treasure crown (Silver)
+leaf-print wet suit (Light blue)
 coral Nook Inc. aloha shirt (Coral)
 green Nook Inc. aloha shirt (Green)
+
+
+horizontal-striped wet suit (Red)
+Jack's robe (Purple)
+raggedy outfit (Orange)
+mage's dress (Orange)
+flashy animal costume (Orange)
+
+
+
+
+
+
+
+
+
+
+
+Jack's face (Orange)
+magic-academy hood (Orange)
+
+
+
+
+
+
+
+
+mage's striped hat (Orange)
+
+
+impish wings (Orange)
+flashy animal boots (Orange)
+mage's boots (Orange)
+animal nose (Black)
+
+
+
+impish horns (Orange)
+flashy pointy-ear animal hat (Orange)
+flashy round-ear animal hat (Orange)
+
+
+
+
+horizontal-striped tights (Orange)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mermaid shoes (Light blue)
+pirate bandanna (Blue)
+pirate bandanna (Black)
+pirate outfit (Blue)
+pirate outfit (Black)
+mermaid princess dress (Light blue)
+mermaid fishy dress (Light blue)
+
+
+
+
+leaf-print wet suit (Purple)
+leaf-print wet suit (Yellow)
+leaf-print wet suit (Green)
+horizontal-striped wet suit (Blue)
+horizontal-striped wet suit (Yellow)
+horizontal-striped wet suit (Black)
+
+communicator
+fountain firework
+used fountain firework
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+red balloon
+yellow balloon
+green balloon
+pink balloon
+
+Nook Inc. handheld pennant
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lollipop
+candy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Nook Inc. snorkel (Green)
+
+
+
+
+
+Luna's bed
+spooky garland
+spooky table setting
+spooky wall
+spooky flooring
+
+pumpkin start
+Dream Bell exchange ticket
+
+fireworks-show wall
+
+
+
+
+
+
+spooky wand
+
+Orihime outfit (Red)
+Hikoboshi outfit (Blue)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Body-Paint Costume Tips
+Exploring New Eye Colors
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+spooky fence
+
+
+
+
+
+
+
+
+
+
+
+moon rug
+
+
+
+
+
+Ring-Con
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Jack's portrait
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+horizontal-striped tights (Purple)
+horizontal-striped tights (White)
+horizontal-striped tights (Green)
+horizontal-striped tights (Red)
+horizontal-striped tights (Black)
+flashy animal costume (Purple)
+flashy animal costume (White)
+flashy animal costume (Green)
+flashy animal costume (Red)
+flashy animal costume (Black)
+mage's dress (Purple)
+mage's dress (White)
+mage's dress (Green)
+mage's dress (Red)
+mage's dress (Black)
+magic-academy robe (Orange)
+raggedy outfit (Purple)
+raggedy outfit (White)
+raggedy outfit (Green)
+raggedy outfit (Red)
+raggedy outfit (Black)
+impish horns (Purple)
+impish horns (White)
+impish horns (Green)
+impish horns (Red)
+impish horns (Black)
+magic-academy hood (Purple)
+magic-academy hood (White)
+magic-academy hood (Green)
+magic-academy hood (Red)
+magic-academy hood (Black)
+mage's striped hat (Purple)
+mage's striped hat (White)
+mage's striped hat (Green)
+mage's striped hat (Red)
+mage's striped hat (Black)
+impish wings (Purple)
+impish wings (White)
+impish wings (Green)
+impish wings (Red)
+impish wings (Black)
+flashy animal boots (Purple)
+flashy animal boots (White)
+flashy animal boots (Green)
+flashy animal boots (Red)
+flashy animal boots (Black)
+flashy pointy-ear animal hat (Purple)
+flashy pointy-ear animal hat (White)
+flashy pointy-ear animal hat (Green)
+flashy pointy-ear animal hat (Red)
+flashy pointy-ear animal hat (Black)
+flashy round-ear animal hat (Purple)
+flashy round-ear animal hat (White)
+flashy round-ear animal hat (Green)
+flashy round-ear animal hat (Red)
+flashy round-ear animal hat (Black)
+mage's boots (Purple)
+mage's boots (White)
+mage's boots (Green)
+mage's boots (Red)
+mage's boots (Black)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+magic-academy robe (Purple)
+magic-academy robe (White)
+magic-academy robe (Green)
+magic-academy robe (Red)
+magic-academy robe (Black)

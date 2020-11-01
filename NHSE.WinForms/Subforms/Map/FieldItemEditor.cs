@@ -8,7 +8,7 @@ using NHSE.Sprites;
 
 namespace NHSE.WinForms
 {
-    public sealed partial class FieldItemEditor : Form
+    public sealed partial class FieldItemEditor : Form, IItemLayerEditor
     {
         private readonly MainSave SAV;
 
@@ -24,14 +24,18 @@ namespace NHSE.WinForms
         private int DragY = -1;
         private bool Dragging;
 
+        public ItemEditor ItemProvider => ItemEdit;
+        public ItemLayer SpawnLayer => Map.CurrentLayer;
+
         public FieldItemEditor(MainSave sav)
         {
             InitializeComponent();
             this.TranslateInterface(GameInfo.CurrentLanguage);
 
+            var scale = (PB_Acre.Width - 2) / 32;
             SAV = sav;
             Map = new MapManager(sav);
-            View = new MapViewer(Map);
+            View = new MapViewer(Map, scale);
 
             Loading = true;
 
@@ -83,7 +87,11 @@ namespace NHSE.WinForms
 
         private int AcreIndex => CB_Acre.SelectedIndex;
 
-        private void ChangeAcre(object sender, EventArgs e) => ChangeViewToAcre(AcreIndex);
+        private void ChangeAcre(object sender, EventArgs e)
+        {
+            ChangeViewToAcre(AcreIndex);
+            CB_MapAcre.Text = CB_Acre.Text;
+        }
 
         private void ChangeViewToAcre(int acre)
         {
@@ -117,7 +125,7 @@ namespace NHSE.WinForms
         private void ReloadMapItemGrid() => PB_Map.Image = View.GetMapWithReticle(GetItemTransparency());
         private void ReloadAcreItemGrid() => PB_Acre.Image = View.GetLayerAcre(GetItemTransparency());
 
-        private void ReloadItems()
+        public void ReloadItems()
         {
             ReloadAcreItemGrid();
             ReloadMapItemGrid();
@@ -195,6 +203,9 @@ namespace NHSE.WinForms
             {
                 default:
                     ViewTile(tile);
+                    return;
+                case Keys.Shift | Keys.Control:
+                    RotateTile(tile);
                     return;
                 case Keys.Shift:
                     SetTile(tile);
@@ -348,6 +359,17 @@ namespace NHSE.WinForms
             tile.CopyFrom(pgt);
 
             ReloadItems();
+        }
+
+        private void RotateTile(TerrainTile tile)
+        {
+            bool rotated = tile.Rotate();
+            if (!rotated)
+            {
+                System.Media.SystemSounds.Asterisk.Play();
+                return;
+            }
+            ReloadBuildingsTerrain();
         }
 
         private void SetTile(TerrainTile tile)
@@ -695,6 +717,7 @@ namespace NHSE.WinForms
         }
 
         private void B_RemoveAllWeeds_Click(object sender, EventArgs e) => Remove(B_RemoveAllWeeds, Map.CurrentLayer.RemoveAllWeeds);
+        private void B_RemoveAllTrees_Click(object sender, EventArgs e) => Remove(B_RemoveAllTrees, Map.CurrentLayer.RemoveAllTrees);
         private void B_FillHoles_Click(object sender, EventArgs e) => Remove(B_FillHoles, Map.CurrentLayer.RemoveAllHoles);
         private void B_RemovePlants_Click(object sender, EventArgs e) => Remove(B_RemovePlants, Map.CurrentLayer.RemoveAllPlants);
         private void B_RemoveFences_Click(object sender, EventArgs e) => Remove(B_RemoveFences, Map.CurrentLayer.RemoveAllFences);
@@ -772,7 +795,9 @@ namespace NHSE.WinForms
             // -32 for relative offset on map (buildings can be placed on the exterior ocean acres)
             // -16 to put it in the center of the view
             const int shift = 48;
-            View.SetViewTo(b.X - shift, b.Y - shift);
+            var x = (b.X - shift) & 0xFFFE;
+            var y = (b.Y - shift) & 0xFFFE;
+            View.SetViewTo(x, y);
         }
 
         private void NUD_BuildingType_ValueChanged(object sender, EventArgs e)
@@ -809,6 +834,10 @@ namespace NHSE.WinForms
         {
             var acre = Map.Terrain.BaseAcres[CB_MapAcre.SelectedIndex * 2];
             CB_MapAcreSelect.SelectedValue = (int)acre;
+
+            // Jump view if available
+            if (CB_Acre.Items.OfType<string>().Any(z => z == CB_MapAcre.Text))
+                CB_Acre.Text = CB_MapAcre.Text;
         }
 
         private void CB_MapAcreSelect_SelectedValueChanged(object sender, EventArgs e)
@@ -885,5 +914,14 @@ namespace NHSE.WinForms
             MapManager.ClearDesignTiles(SAV);
             System.Media.SystemSounds.Asterisk.Play();
         }
+
+        private void Menu_Spawn_Click(object sender, EventArgs e) => new BulkSpawn(this, View.X, View.Y).ShowDialog();
+    }
+
+    public interface IItemLayerEditor
+    {
+        void ReloadItems();
+        ItemEditor ItemProvider { get; }
+        ItemLayer SpawnLayer { get; }
     }
 }

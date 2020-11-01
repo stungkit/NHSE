@@ -240,9 +240,9 @@ cráneo tiranosaurio
 cuerpo tiranosaurio
 cola tiranosaurio
 
-cráneo triceratops
-cuerpo triceratops
-cola triceratops
+cráneo tricerátops
+cuerpo tricerátops
+cola tricerátops
 
 
 
@@ -1180,7 +1180,7 @@ futbolín
 
 
 tenis de mesa
-
+caña de bambú
 
 
 cabina telefónica
@@ -1266,12 +1266,12 @@ armario pera
 
 tonel
 
+cañón de barco pirata
 
 
 
 
-
-
+timón de barco pirata
 
 
 
@@ -1821,7 +1821,7 @@ probador
 
 
 
-basura
+par de bolsas de basura
 
 
 
@@ -2609,7 +2609,7 @@ cama individual de madera
 
 lazo (Verde)
 lazo (Rojo)
-
+diadema estrellas (Amarillo)
 
 
 bici de montaña
@@ -2618,7 +2618,7 @@ escalera de mano
 
 
 
-
+alga wakame
 
 
 
@@ -2828,35 +2828,35 @@ camisa de vestir (Blanco)
 
 
 
+uva de mar
+erizo de mar
+bellota de mar
+ostra
+caracola espinosa
+abulón
 
 
+ostra perlera
+vieira
+anémona
+estrella de mar
+pepino de mar
+babosa de mar
+gusano políclado
+langosta mantis
+camarón boreal
+langostino tigre
+langosta espinosa
+bogavante
+cangrejo de nieve
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+cangrejo boreal
+cangrejo gigante japonés
+pulpo
+anguila jardinera
+nautilo
+cangrejo herradura
+isópodo gigante
 
 azalea blanca joven
 azalea blanca adulta
@@ -3050,8 +3050,8 @@ acebo adulto
 
 
 
-
-
+calabaza joven
+calabaza pequeña
 vestido lunares y cinturón (Celeste)
 camiseta marinera (Azul marino)
 sudadera con capucha (Gris)
@@ -3145,7 +3145,7 @@ uniforme café años 50 (Rosa)
 camisa de manga corta (Blanco)
 camisa sin mangas (Blanco)
 vestido de conejito (Rosa)
-
+casaca pirata (Rojo)
 
 
 
@@ -3332,8 +3332,8 @@ camisa con jersey (Rosa)
 cronómetro
 
 tele LCD de 20"
-sudadera urbana (Azul marino)
-pantalón de chándal (Azul marino)
+sudadera de chándal urbana (Azul marino)
+pantalón de chándal urbano (Azul marino)
 vestido nupcial (Blanco)
 kilt (Rojo)
 
@@ -3548,7 +3548,7 @@ copo de nieve XL
 
 
 pico (Amarillo)
-bigote inglés (Negro)
+bigote inglés (Color del pelo)
 estante de bambú
 
 separador de bambú
@@ -4081,16 +4081,16 @@ barra de pesas
 bañera estrecha
 cama de campaña
 
+arco calabaza
+espantapájaros calabaza
 
+torre calabaza
+carruaje calabaza
+farol calabaza
+taburete calabaza
+mesa grande calabaza
 
-
-
-
-
-
-
-
-
+set de faroles calabaza
 xilófono de bambú
 minibiotopo flotante
 
@@ -4293,7 +4293,7 @@ camiseta con bolsillo (Blanco)
 uniforme de sacerdotisa (Bermellón)
 corona cosmos
 
-
+vestido de pirata (Rojo)
 falda corta de pana (Marrón)
 
 
@@ -4360,7 +4360,7 @@ valla puntiaguda
 pijama de lana (Rosa)
 gabardina de polipiel (Negro)
 toalla de baño (Rosa)
-
+calabaza mediana
 americana de negocios (Negro)
 pantalón acampanado (Naranja)
 chaqueta escolar (Negro)
@@ -4384,7 +4384,7 @@ balón de fútbol americano
 
 
 
-
+lanzapompas
 
 
 
@@ -4523,33 +4523,33 @@ sudadera semiabierta (Rojo)
 pantalón corto muay thai (Azul)
 minipantalón topos (Negro)
 chaleco de tweed (Verde)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+calabaza naranja
+calabaza amarilla
+calabaza verde
+calabaza blanca
+calabaza naranja joven
+calabaza naranja pequeña
+calabaza naranja mediana
+calabaza naranja madura
+calabaza amarilla joven
+calabaza amarilla pequeña
+calabaza amarilla mediana
+calabaza amarilla madura
+calabaza verde joven
+calabaza verde pequeña
+calabaza verde mediana
+calabaza verde madura
+calabaza blanca joven
+calabaza blanca pequeña
+calabaza blanca mediana
+calabaza blanca madura
 falda envolvente tartán (Amarillo)
 cama pera
 falda flores bordadas (Verde)
 falda cenefas bordadas (Azul)
 cebo
 
-
+gafa de buceo (Azul)
 cibergafa (Rojo)
 jersey con bufanda (Blanco)
 
@@ -4670,14 +4670,14 @@ top largo (Blanco)
 montura de madera (Marrón)
 
 máscara anonimato (Negro)
-bigote de artista (Negro)
+bigote de artista (Color del pelo)
 top carrera (1)
 cárdigan de punto largo (Mostaza)
 top lunares y lacitos (Negro)
-perilla (Negro)
+perilla (Color del pelo)
 par de tiritas (Beis)
 careta de bufón (Negro)
-barba perfilada (Negro)
+barba perfilada (Color del pelo)
 jersey de lana estampado (Verde musgo)
 traje de detective (Marrón)
 hoja (Verde)
@@ -4709,7 +4709,7 @@ pértiga
 banqueta hongo
 
 jersey holgado (Gris)
-disfraz de demonio (Negro)
+disfraz de diablillo (Negro)
 
 
 chancla de piscina (Negro)
@@ -5140,7 +5140,7 @@ sombrero cuate (Natural y rojo)
 casco de obra (Amarillo)
 gorro de chef (Blanco)
 gorra de policía (Azul marino)
-
+sombrero pirata (Negro)
 gorro de bambú cónico (Beis)
 gorro de pelo sintético (Beis)
 pañuelo anudado (Amarillo)
@@ -5317,7 +5317,7 @@ gorro bellota (Castaña)
 casco de soldado (Verde bosque)
 sudadera compañía de baile (Negro)
 
-
+paipay
 ocarina
 
 pañuelo anudado en la nariz (Verde)
@@ -5605,7 +5605,7 @@ Bricolaje para principiantes
 Bricolaje para expertos
 Bricolaje para epatar
 zapato muñequita (Rosa)
-
+máscara egipcia (Dorado)
 zapatilla de ballet (Rosa)
 bota punk (Negro)
 traje de rumba (Rojo)
@@ -5740,9 +5740,9 @@ pompa de chicle (Rosa)
 gafa de sol floral (Rojo)
 
 vara de luz
-
-
-
+matasuegras
+bengala roja
+molinete
 corona cosmos adorable
 corona anémona refinada
 corona rosa pomposa
@@ -5882,7 +5882,7 @@ falda limones (Celeste)
 
 
 
-とたけけのスツール
+
 
 
 
@@ -6811,7 +6811,7 @@ foto de Cornelio
 
 camisa vichy (Rojo)
 
-とたけけライブのイス
+
 
 
 
@@ -6918,7 +6918,7 @@ paraguas rayas
 paraguas tartán
 paraguas de vinilo a topos
 paraguas negro
-
+calamar luciérnaga
 halo (Dorado)
 chancla (Verde)
 paraguas camuflaje
@@ -7189,7 +7189,7 @@ pared bosque
 
 foco profesional de pie
 foco profesional para colgar
-
+cangrejo gazami
 
 
 
@@ -7201,7 +7201,7 @@ sudadera sport (Negro)
 sudadera sport (Azul)
 sudadera sport (Burdeos)
 sudadera sport (Azul marino)
-
+calamar vampiro
 suelo cerezos en flor
 pared cerezos en flor
 
@@ -7212,7 +7212,7 @@ diadema orejitas de conejo (Negro)
 kit de puente
 foto de Morfeo
 foto de Fibrilio
-
+taclobo gigante
 pared cuqui blanca
 pared cuqui roja
 pared cuqui azul
@@ -7226,7 +7226,7 @@ losa cuqui amarilla
 
 
 
-
+piña de mar
 carretilla
 ducha cosmos
 caja sorpresa tulipán
@@ -7243,14 +7243,14 @@ pared café años 50 azul
 pared café años 50 rosa
 pared café años 50 gris
 pared café años 50 marrón
-
+medusa luna
 
 silo
 
 
 
 punta de cola diplodocus
-
+pulpo paraguas
 reloj estrella
 gorro de paja achatado (Marrón)
 
@@ -7265,7 +7265,7 @@ lata metálica
 estandarte de la victoria
 
 
-
+erizo lápiz de pizarra
 
 
 
@@ -7276,7 +7276,7 @@ pared patchwork rosa
 pared patchwork lila
 pared patchwork amarilla
 pared patchwork azul
-
+buccino
 
 engranaje
 trineo
@@ -7301,12 +7301,12 @@ máscara hoja (Verde)
 
 
 bolsa deportiva retro (Azul)
-
+cerdo de mar
 minibolsa (Azul)
 bolso de noche (Rosa)
 
 
-
+buey del Pacífico
 
 
 
@@ -7316,7 +7316,7 @@ bolso de noche (Rosa)
 
 
 tumba japonesa
-
+canasta de flores de Venus
 
 
 
@@ -7409,7 +7409,7 @@ figura de ciempiés
 roca con agua y hojas arce
 roca con agua y pétalos
 
-
+mejillón
 tiara (Plateado)
 
 
@@ -7431,16 +7431,16 @@ vestido nobiliario (Negro)
 vestido nobiliario (Púrpura)
 vestido nobiliario (Amarillo)
 vestido nobiliario (Rojo)
+casaca pirata (Azul)
+casaca pirata (Negro)
 
 
 
 
 
 
-
-
-
-
+vestido de pirata (Azul)
+vestido de pirata (Negro)
 
 
 uniforme de conserje (Rojo)
@@ -7543,7 +7543,7 @@ alfombra sencilla naranja P
 alfombra sencilla lila P
 alfombra sencilla negra P
 
-
+alfombra calabaza
 alfombra Caza del Huevo
 
 chaqueta escolar (Burdeos)
@@ -7609,12 +7609,12 @@ sudadera semiabierta (Celeste)
 sudadera semiabierta (Azul marino)
 sudadera semiabierta (Púrpura)
 sudadera semiabierta (Salmón)
-sudadera urbana (Gris)
-sudadera urbana (Blanco)
-sudadera urbana (Rojo)
-sudadera urbana (Celeste)
-sudadera urbana (Verde)
-sudadera urbana (Azul)
+sudadera de chándal urbana (Gris)
+sudadera de chándal urbana (Blanco)
+sudadera de chándal urbana (Rojo)
+sudadera de chándal urbana (Celeste)
+sudadera de chándal urbana (Verde)
+sudadera de chándal urbana (Azul)
 sudadera compañía de baile (Blanco)
 sudadera compañía de baile (Púrpura)
 sudadera compañía de baile (Rojo)
@@ -7867,7 +7867,7 @@ expositor de kimonos lujoso
 
 poste indicador oblicuo
 tabla de surf
-
+globo azul
 
 
 
@@ -8770,7 +8770,7 @@ paraguas peces
 varita bicho
 varita pez
 
-たぬきかいはつヘルメット
+
 permiso camino empedrado
 permiso camino de ladrillo
 permiso camino tierra negra
@@ -9495,7 +9495,7 @@ mono de superhéroe (Rojo)
 mono de superhéroe (Negro)
 mono de superhéroe (Verde)
 vestido adorable (Púrpura)
-disfraz de demonio (Rojo)
+disfraz de diablillo (Rojo)
 camiseta topos (Celeste)
 camiseta topos (Rojo)
 camiseta topos (Verde)
@@ -9855,9 +9855,9 @@ manoletina con bordado (Rojo)
 clip flor (Rosa)
 clip corazón (Rosa)
 clip estrella (Amarillo)
-
-
-
+diadema luciérnagas (Verde)
+diadema florecillas (Azul)
+diadema corazones (Rosa)
 pasador (Rosa)
 maxilazo (Rojo)
 casco estrella (Amarillo)
@@ -10311,7 +10311,7 @@ proyecto tirachinas
 
 
 póster de Canela
-póster de Rese.T.
+póster de Rese T.
 póster de Talía
 póster de Zoilo
 póster de Coni
@@ -10855,14 +10855,14 @@ lazo (Naranja)
 lazo (Rosa)
 lazo (Blanco)
 lazo (Negro)
-póster de Reneigh
-póster de Judy
-póster de Audie
-póster de Megan
-póster de Raymond
-póster de Cyd
-póster de Sherb
-póster de Dom
+póster de Corcelia
+póster de Rosezna
+póster de Mónica
+póster de Carmela
+póster de Narciso
+póster de Ramón
+póster de Morfeo
+póster de Fibrilio
 
 
 gorra de colegio (Azul marino)
@@ -11282,12 +11282,12 @@ pantalón de vestir (Azul marino)
 pantalón de vestir (Beis)
 pantalón de vestir (Blanco)
 acuario de artemias
-pantalón de chándal (Gris)
-pantalón de chándal (Blanco)
-pantalón de chándal (Rojo)
-pantalón de chándal (Celeste)
-pantalón de chándal (Verde)
-pantalón de chándal (Azul)
+pantalón de chándal urbano (Gris)
+pantalón de chándal urbano (Blanco)
+pantalón de chándal urbano (Rojo)
+pantalón de chándal urbano (Celeste)
+pantalón de chándal urbano (Verde)
+pantalón de chándal urbano (Azul)
 pantalón de polipiel (Marrón)
 pantalón de polipiel (Beis)
 pantalón de polipiel (Rojo)
@@ -11491,11 +11491,11 @@ gafa de sol esquí (Blanco)
 gafa de sol esquí (Rosa)
 gafa de sol esquí (Lima)
 gafa de sol esquí (Celeste)
-
-
-
-
-
+gafa de buceo (Naranja)
+gafa de buceo (Rojo)
+gafa de buceo (Rosa)
+gafa de buceo (Verde)
+gafa de buceo (Negro)
 cibergafa (Negro)
 cibergafa (Plateado)
 cibergafa (Púrpura)
@@ -12199,7 +12199,7 @@ falda vichy (Púrpura)
 falda vichy (Celeste)
 camiseta calavera (Beis)
 camiseta calavera (Púrpura)
-ひろばのベンチ
+
 
 
 
@@ -12207,8 +12207,8 @@ camiseta calavera (Púrpura)
 roca plana
 taburete apilable
 roca con musgo
-パニエルのせんたくおけ
-パニエルのものほしロープ
+
+
 
 デモ用たぬきマイルカード
 
@@ -12227,7 +12227,7 @@ alfombra bolsa de bayas
 
 
 
-パニエルのいしがま
+
 juego de peonzas festivo
 
 
@@ -12283,7 +12283,7 @@ juego de peonzas festivo
 
 
 
-コミューン島専用柵
+
 
 
 
@@ -12537,8 +12537,8 @@ piedra políglota
 piedra políglota (forgery)
 urna imponente
 urna imponente (forgery)
-estatua guerrera
-estatua guerrera (forgery)
+escultura guerrera
+escultura guerrera (forgery)
 estatua pensativa
 
 Nintendo Switch
@@ -12550,29 +12550,29 @@ joya amorosa
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+mesa sirena
+estantería sirena
+tocador sirena
+biombo sirena
+lámpara sirena
+reloj de pared sirena
+cama sirena
+armario sirena
+sofá sirena
+cómoda sirena
+silla sirena
+alfombra sirena
+alfombra pirata
 foto de Al y Paca
-
-
-
-
+pared sirena
+pared pirata
+suelo sirena
+suelo pirata
 cuadro naturaleza (izda.)
 cuadro naturaleza (izda.) (forgery)
-
-
-
+tonel pirata tumbado
+cofre del tesoro pirata
+tonel pirata
 capa hecha a mano (Rojo)
 corona hecha a mano (Rojo)
 corona de girasoles (Amarillo)
@@ -12658,15 +12658,15 @@ valla Caza del Huevo
 
 
 
-
-
-
-
-
-
-
-
-
+zapato sirena (Rosa)
+tiara de sirena (Blanco)
+parche pirata (Negro)
+barba de pirata (Color del pelo)
+pantalón de pirata (Negro)
+bota pirata (Marrón)
+pañuelo de pirata (Rojo)
+casaca del tesoro pirata (Negro)
+traje de pirata (Rojo)
 
 
 
@@ -12795,7 +12795,7 @@ seto
 
 
 
-
+mochila vendimia (Marrón)
 
 
 
@@ -12919,6 +12919,7 @@ valla de boda
 
 
 
+balancín de muelle vaquero
 
 
 
@@ -12946,17 +12947,16 @@ valla de boda
 
 
 
+farol colgante calabaza
+
+bandeja chuches calabaza
 
 
 
 
 
-
-
-
-
-
-
+vestido princesa sirena (Rosa)
+vestido cola de sirena (Rosa)
 jersey solsticio de invierno (Beis)
 
 
@@ -12966,19 +12966,531 @@ jersey solsticio de invierno (Beis)
 
 
 
+perla
+
+traje de buceo de Nook Inc. (Verde)
+
+
+
+bengala azul
 
 
 
 
 
-
-
-
-
-
-
-
-
-
+corona del tesoro pirata (Plateado)
+traje de buceo hoja (Celeste)
 cam. aloha Nook Inc. coral (Salmón)
 cam. aloha Nook Inc. verde (Verde)
+
+
+traje de buceo a rayas (Rojo)
+túnica de Soponcio (Púrpura)
+traje andrajoso (Naranja)
+vestido de hechicería (Naranja)
+disfraz de animal (Naranja)
+
+
+
+
+
+
+
+
+
+
+
+máscara de Soponcio (Naranja)
+capucha escuela de magia (Naranja)
+
+
+
+
+
+
+
+
+sombrero hechicería rayas (Naranja)
+
+
+par de alas de diablillo (Naranja)
+bota de animal (Naranja)
+bota de hechicería (Naranja)
+nariz de animal (Negro)
+
+
+
+par de cuernos de diablillo (Naranja)
+gorro orejas puntiagudas (Naranja)
+gorro orejas redondeadas (Naranja)
+
+
+
+
+media rayas horizontales (Naranja)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+zapato sirena (Celeste)
+pañuelo de pirata (Azul)
+pañuelo de pirata (Negro)
+traje de pirata (Azul)
+traje de pirata (Negro)
+vestido princesa sirena (Celeste)
+vestido cola de sirena (Celeste)
+
+
+
+
+traje de buceo hoja (Púrpura)
+traje de buceo hoja (Amarillo)
+traje de buceo hoja (Verde)
+traje de buceo a rayas (Azul)
+traje de buceo a rayas (Amarillo)
+traje de buceo a rayas (Negro)
+
+comunicador
+bengala de tubo
+bengala de tubo usada
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+globo rojo
+globo amarillo
+globo verde
+globo rosa
+
+banderín Nook Inc. portátil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+piruleta
+chuche
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+gafa de buceo Nook Inc. (Verde)
+
+
+
+
+
+cama de Alakama
+guirnalda calabaza
+servicio de mesa calabaza
+pared calabaza
+suelo calabaza
+
+calabaza de vivero
+cupón de bayas onírico
+
+pared fuegos artificiales
+
+
+
+
+
+
+varita calabaza
+
+atuendo de Orihime (Rojo)
+atuendo de Hikoboshi (Azul)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Trucos de pintura corporal
+Guía de lentillas de colores
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+valla calabaza
+
+
+
+
+
+
+
+
+
+
+
+alfombra luna
+
+
+
+
+
+Ring-Con
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+retrato de Soponcio
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+media rayas horizontales (Púrpura)
+media rayas horizontales (Blanco)
+media rayas horizontales (Verde)
+media rayas horizontales (Rojo)
+media rayas horizontales (Negro)
+disfraz de animal (Púrpura)
+disfraz de animal (Blanco)
+disfraz de animal (Verde)
+disfraz de animal (Rojo)
+disfraz de animal (Negro)
+vestido de hechicería (Púrpura)
+vestido de hechicería (Blanco)
+vestido de hechicería (Verde)
+vestido de hechicería (Rojo)
+vestido de hechicería (Negro)
+túnica escuela de magia (Naranja)
+traje andrajoso (Púrpura)
+traje andrajoso (Blanco)
+traje andrajoso (Verde)
+traje andrajoso (Rojo)
+traje andrajoso (Negro)
+par de cuernos de diablillo (Púrpura)
+par de cuernos de diablillo (Blanco)
+par de cuernos de diablillo (Verde)
+par de cuernos de diablillo (Rojo)
+par de cuernos de diablillo (Negro)
+capucha escuela de magia (Púrpura)
+capucha escuela de magia (Blanco)
+capucha escuela de magia (Verde)
+capucha escuela de magia (Rojo)
+capucha escuela de magia (Negro)
+sombrero hechicería rayas (Púrpura)
+sombrero hechicería rayas (Blanco)
+sombrero hechicería rayas (Verde)
+sombrero hechicería rayas (Rojo)
+sombrero hechicería rayas (Negro)
+par de alas de diablillo (Púrpura)
+par de alas de diablillo (Blanco)
+par de alas de diablillo (Verde)
+par de alas de diablillo (Rojo)
+par de alas de diablillo (Negro)
+bota de animal (Púrpura)
+bota de animal (Blanco)
+bota de animal (Verde)
+bota de animal (Rojo)
+bota de animal (Negro)
+gorro orejas puntiagudas (Púrpura)
+gorro orejas puntiagudas (Blanco)
+gorro orejas puntiagudas (Verde)
+gorro orejas puntiagudas (Rojo)
+gorro orejas puntiagudas (Negro)
+gorro orejas redondeadas (Púrpura)
+gorro orejas redondeadas (Blanco)
+gorro orejas redondeadas (Verde)
+gorro orejas redondeadas (Rojo)
+gorro orejas redondeadas (Negro)
+bota de hechicería (Púrpura)
+bota de hechicería (Blanco)
+bota de hechicería (Verde)
+bota de hechicería (Rojo)
+bota de hechicería (Negro)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+túnica escuela de magia (Púrpura)
+túnica escuela de magia (Blanco)
+túnica escuela de magia (Verde)
+túnica escuela de magia (Rojo)
+túnica escuela de magia (Negro)
