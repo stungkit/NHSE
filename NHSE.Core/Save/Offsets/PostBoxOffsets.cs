@@ -49,6 +49,7 @@ public abstract class PostBoxOffsets
             29 => new PostBoxOffsets20(),
             30 => new PostBoxOffsets20(),
             31 => new PostBoxOffsets30(),
+            32 => new PostBoxOffsets30(),
             _ => throw new IndexOutOfRangeException("Unknown revision!" + Environment.NewLine + Info),
         };
     }
