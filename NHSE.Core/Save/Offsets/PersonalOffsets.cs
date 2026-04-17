@@ -78,6 +78,7 @@ public abstract class PersonalOffsets
             30 => new PersonalOffsets20(),
             31 => new PersonalOffsets30(),
             32 => new PersonalOffsets30(),
+            33 => new PersonalOffsets30(),
             _ => throw new IndexOutOfRangeException("Unknown revision!" + Environment.NewLine + Info),
         };
     }

@@ -65,6 +65,7 @@ public static class RevisionChecker
         new() { Major = 0x80009, Minor = 0x80085, HeaderRevision = 0, Unk1 = 2, SaveRevision = 30, Unk2 = 2 }, // 2.0.8
         new() { Major = 0xA0002, Minor = 0xA0028, HeaderRevision = 0, Unk1 = 2, SaveRevision = 31, Unk2 = 2 }, // 3.0.0
         new() { Major = 0xA0002, Minor = 0xA0028, HeaderRevision = 0, Unk1 = 2, SaveRevision = 32, Unk2 = 2 }, // 3.0.1
+        new() { Major = 0xA0002, Minor = 0xA0028, HeaderRevision = 0, Unk1 = 2, SaveRevision = 33, Unk2 = 2 }, // 3.0.2
     ];
 
     public static readonly IReadOnlyList<SaveFileSizes> SizeInfo =
@@ -102,6 +103,7 @@ public static class RevisionChecker
         SizesByRevision[12], // 2.0.8
         SizesByRevision[13], // 3.0.0
         SizesByRevision[13], // 3.0.1
+        SizesByRevision[13], // 3.0.2
     ];
 
     public static readonly IReadOnlyList<FileHashInfo> HashInfo =
@@ -139,6 +141,7 @@ public static class RevisionChecker
         REV_200, // 2.0.8
         REV_300, // 3.0.0
         REV_300, // 3.0.1
+        REV_300, // 3.0.2
     ];
 
     extension(FileHeaderInfo info)
